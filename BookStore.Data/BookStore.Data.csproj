@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B1C337A-FA2C-438C-9EB9-3F2E91566672}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookStore.Data</RootNamespace>
+    <AssemblyName>BookStore.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookStoreDbContext.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201608300300427_InitialDB.cs" />
+    <Compile Include="Migrations\201608300300427_InitialDB.Designer.cs">
+      <DependentUpon>201608300300427_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608300858333_AddErrorTable.cs" />
+    <Compile Include="Migrations\201608300858333_AddErrorTable.Designer.cs">
+      <DependentUpon>201608300858333_AddErrorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609080125060_Intergrate-AspnetIdentity.cs" />
+    <Compile Include="Migrations\201609080125060_Intergrate-AspnetIdentity.Designer.cs">
+      <DependentUpon>201609080125060_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609080155323_Changkey.cs" />
+    <Compile Include="Migrations\201609080155323_Changkey.Designer.cs">
+      <DependentUpon>201609080155323_Changkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609200445019_AddContentSlide.cs" />
+    <Compile Include="Migrations\201609200445019_AddContentSlide.Designer.cs">
+      <DependentUpon>201609200445019_AddContentSlide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609200456047_addcontent.cs" />
+    <Compile Include="Migrations\201609200456047_addcontent.Designer.cs">
+      <DependentUpon>201609200456047_addcontent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609201109234_AddQuantity.cs" />
+    <Compile Include="Migrations\201609201109234_AddQuantity.Designer.cs">
+      <DependentUpon>201609201109234_AddQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609201442221_addforeignkey.cs" />
+    <Compile Include="Migrations\201609201442221_addforeignkey.Designer.cs">
+      <DependentUpon>201609201442221_addforeignkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609201800537_AddContactDetail.cs" />
+    <Compile Include="Migrations\201609201800537_AddContactDetail.Designer.cs">
+      <DependentUpon>201609201800537_AddContactDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609210020413_addfeedback.cs" />
+    <Compile Include="Migrations\201609210020413_addfeedback.Designer.cs">
+      <DependentUpon>201609210020413_addfeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\ContactDetailRepository.cs" />
+    <Compile Include="Repositories\ErrorRepository.cs" />
+    <Compile Include="Repositories\FeedbackRepository.cs" />
+    <Compile Include="Repositories\FooterRepository.cs" />
+    <Compile Include="Repositories\MenuGroupRepository.cs" />
+    <Compile Include="Repositories\MenuRepository.cs" />
+    <Compile Include="Repositories\OrderDetailRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\PageRepository.cs" />
+    <Compile Include="Repositories\PostCategoryRepository.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
+    <Compile Include="Repositories\PostTagRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProductTagRepository.cs" />
+    <Compile Include="Repositories\SlideRepository.cs" />
+    <Compile Include="Repositories\SupportOnlineRepository.cs" />
+    <Compile Include="Repositories\SystemConfigRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\VisitorStatisticRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Scripts\angular.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Common\BookStore.Common.csproj">
+      <Project>{085e373f-dcd1-4c29-9fdd-a0be246e68b5}</Project>
+      <Name>BookStore.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookStore.Model\BookStore.Model.csproj">
+      <Project>{73686f4d-512f-4cc8-82da-22bdfb673468}</Project>
+      <Name>BookStore.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608300300427_InitialDB.resx">
+      <DependentUpon>201608300300427_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608300858333_AddErrorTable.resx">
+      <DependentUpon>201608300858333_AddErrorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609080125060_Intergrate-AspnetIdentity.resx">
+      <DependentUpon>201609080125060_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609080155323_Changkey.resx">
+      <DependentUpon>201609080155323_Changkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609200445019_AddContentSlide.resx">
+      <DependentUpon>201609200445019_AddContentSlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609200456047_addcontent.resx">
+      <DependentUpon>201609200456047_addcontent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609201109234_AddQuantity.resx">
+      <DependentUpon>201609201109234_AddQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609201442221_addforeignkey.resx">
+      <DependentUpon>201609201442221_addforeignkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609201800537_AddContactDetail.resx">
+      <DependentUpon>201609201800537_AddContactDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609210020413_addfeedback.resx">
+      <DependentUpon>201609210020413_addfeedback.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
